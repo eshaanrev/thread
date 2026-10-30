@@ -1,5 +1,5 @@
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         Thread[] threads = new Thread[1000];
         long[] totals = new long[1000];
 
@@ -16,6 +16,10 @@ public class Main {
 
         for (Thread thread : threads) {
             thread.start();
+        }
+
+        for (Thread thread : threads) {
+            thread.join();
         }
     }
 }
